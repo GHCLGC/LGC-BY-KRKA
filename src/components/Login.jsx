@@ -1,36 +1,38 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 function Login() {
-  const [email, setEmail] = useState('');
-  const [senha, setSenha] = useState('');
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert(`Email: ${email}, Senha: ${senha}`);
-  };
-
   return (
-    <div className="p-6 max-w-sm mx-auto">
-      <h2 className="text-xl font-bold mb-4">Iniciar Sessão</h2>
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="w-full border p-2 rounded"
-        />
-        <input
-          type="password"
-          placeholder="Senha"
-          value={senha}
-          onChange={(e) => setSenha(e.target.value)}
-          className="w-full border p-2 rounded"
-        />
-        <button type="submit" className="w-full bg-blue-600 text-white p-2 rounded">
-          Entrar
-        </button>
-      </form>
+    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-sm">
+        <div className="text-center mb-4">
+          <img src="/logo.png" alt="Logo Liga-te" className="w-32 mx-auto" />
+          <h2 className="text-xl font-semibold text-gray-800 mt-2">Aceder à plataforma</h2>
+        </div>
+        <form>
+          <div className="mb-4">
+            <label className="block text-sm font-medium text-gray-700">Utilizador</label>
+            <input
+              type="text"
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm"
+              placeholder="ex: farmacêutico"
+            />
+          </div>
+          <div className="mb-6">
+            <label className="block text-sm font-medium text-gray-700">Palavra-passe</label>
+            <input
+              type="password"
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm"
+              placeholder="••••••••"
+            />
+          </div>
+          <button
+            type="submit"
+            className="w-full bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700"
+          >
+            Entrar
+          </button>
+        </form>
+      </div>
     </div>
   );
 }
