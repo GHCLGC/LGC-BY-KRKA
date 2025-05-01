@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
-    <nav className="bg-green-100 shadow p-4 flex items-center justify-between">
+    <nav className="p-4 flex items-center justify-between">
       <Link to="/">
         <img src="/logo-ligate.png" alt="Logo Liga-te" className="h-10" />
       </Link>
