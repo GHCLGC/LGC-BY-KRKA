@@ -1,1 +1,3 @@
-import React from 'react'; export default function App() { return <div className='p-4'>Olá Liga-te ao Coração!</div>; }
+export default function App() {
+  return <h1>Bem-vindo à Plataforma Liga-te 💚</h1>;
+}
