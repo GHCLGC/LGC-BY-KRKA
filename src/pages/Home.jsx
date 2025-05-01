@@ -4,23 +4,29 @@ import { Link } from 'react-router-dom';
 function Home() {
   return (
     <div className="max-w-3xl mx-auto text-center mt-10 px-4">
-      <img src="/logo-ligate.png" alt="Logo Liga-te ao Coração" className="mx-auto h-32 mb-6" />
-      
-      <h1 className="text-3xl font-bold text-green-700 mb-2">Liga-te ao Coração</h1>
-      
-      <p className="text-gray-700 mb-2">
-        Bem-vindo à plataforma de acompanhamento da pressão arterial nas farmácias.
+      {/* Logotipo central com maior dimensão */}
+      <img
+        src="/logo-ligate.png"
+        alt="Logo Liga-te ao Coração"
+        className="mx-auto h-40 mb-6"
+      />
+
+      {/* Título principal */}
+      <h1 className="text-3xl font-bold text-green-700 mb-4">
+        Liga-te ao Coração
+      </h1>
+
+      {/* Frase de boas-vindas */}
+      <p className="text-gray-700 mb-6">
+        Bem-vindo à plataforma de acompanhamento da pressão arterial nas farmácias, em Portugal.
       </p>
 
-      <p className="text-gray-700 mb-4">
-        Esta aplicação permite registar medições de pressão arterial, gerar relatórios para o médico,
-        gerir utentes e visualizar estatísticas em tempo real.
-      </p>
-
+      {/* Frase substituída */}
       <p className="text-sm italic text-gray-500 mb-8">
-        Desenvolvido em parceria com a KRKA e a equipa de farmacêuticos do programa.
+        Esta é uma aplicação desenvolvida pela KRKA Farmacêutica.
       </p>
 
+      {/* Botão de login centrado */}
       <div className="flex justify-center">
         <Link
           to="/login"
@@ -34,3 +40,4 @@ function Home() {
 }
 
 export default Home;
+
