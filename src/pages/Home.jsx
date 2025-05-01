@@ -18,7 +18,7 @@ function Home() {
 
       {/* Frase de boas-vindas */}
       <p className="text-gray-700 mb-6">
-        Bem-vindo à plataforma de acompanhamento da pressão arterial nas farmácias, em Portugal.
+        Bem-vindo à plataforma de acompanhamento da pressão arterial nas farmácias.
       </p>
 
       {/* Frase substituída */}
@@ -40,4 +40,3 @@ function Home() {
 }
 
 export default Home;
-
