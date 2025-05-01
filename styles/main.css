@@ -3,12 +3,3 @@ body {
   margin: 0;
   padding: 0;
 }
-nav {
-  background-color: #f0f0f0;
-  padding: 1rem;
-}
-nav a {
-  margin: 0 1rem;
-  text-decoration: none;
-  color: #333;
-}
