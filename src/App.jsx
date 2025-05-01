@@ -8,15 +8,12 @@ import Navbar from './components/Navbar';
 
 function App() {
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/profile" element={<Profile />} />
-      </Routes>
-    </Router>
+    <div className="p-6 max-w-3xl mx-auto space-y-4">
+      <h1 className="text-3xl font-bold text-green-700">Liga-te ao Coração</h1>
+      <p className="text-gray-700 text-lg">
+        Bem-vindo à plataforma de acompanhamento da pressão arterial nas farmácias.
+      </p>
+    </div>
   );
 }
 
