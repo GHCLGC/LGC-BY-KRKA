@@ -1,0 +1,1 @@
+import React from 'react'; export default function App() { return <div className='p-4'>Olá Liga-te ao Coração!</div>; }

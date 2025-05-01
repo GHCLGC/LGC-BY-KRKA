@@ -1,0 +1,1 @@
+export default function PainelAdmin() { return <div>Painel de Administração (a completar)</div>; }

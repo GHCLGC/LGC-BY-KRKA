@@ -1,0 +1,1 @@
+export default function RelatorioMedicoPDF() { return <div>Relatório Médico (a completar)</div>; }
