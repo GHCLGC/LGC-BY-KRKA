@@ -7,7 +7,7 @@ function Home() {
       <img
         src="/logo-ligate.png"
         alt="Logo Liga-te ao Coração"
-        className="mx-auto h-40 mb-6"
+        className="mx-auto h-[30rem] mb-6"
       />
       <h1 className="text-3xl font-bold text-green-700 mb-4">
         Liga-te ao Coração
