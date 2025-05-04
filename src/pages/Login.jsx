@@ -1,20 +1,21 @@
-import { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../context/AuthContext';
 
 export default function Login() {
+  const { login } = useContext(AuthContext);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Login "fake" para demonstração
-    if (username === '1234' && password === '1234') {
-      localStorage.setItem('isAuthenticated', 'true');
+    const success = login(username, password);
+    if (success) {
       navigate('/dashboard');
     } else {
-      alert('Credenciais inválidas.');
+      alert('Credenciais inválidas. Tente novamente.');
     }
   };
 
@@ -24,34 +25,35 @@ export default function Login() {
         <img
           src="/logo-ligate.png"
           alt="Logo Liga-te"
-          className="mx-auto mb-6 h-24"
+          className="mx-auto h-24 mb-4"
         />
-        <h2 className="text-lg font-semibold mb-4">Aceder à plataforma</h2>
-        <form onSubmit={handleLogin} className="space-y-4 text-left">
-          <div>
-            <label className="block text-sm font-medium mb-1">Utilizador</label>
+        <h2 className="text-xl font-semibold text-gray-800 mb-4">Aceder à plataforma</h2>
+        <form onSubmit={handleSubmit} className="text-left">
+          <div className="mb-4">
+            <label className="block text-sm font-medium text-gray-700">Utilizador</label>
             <input
               type="text"
-              placeholder="1234"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               className="w-full border rounded px-3 py-2"
+              placeholder="1234"
               required
             />
           </div>
-          <div>
-            <label className="block text-sm font-medium mb-1">Palavra-passe</label>
+          <div className="mb-6">
+            <label className="block text-sm font-medium text-gray-700">Palavra-passe</label>
             <input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="w-full border rounded px-3 py-2"
+              placeholder="••••••••"
               required
             />
           </div>
           <button
             type="submit"
-            className="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-2 rounded"
+            className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded"
           >
             Entrar
           </button>
