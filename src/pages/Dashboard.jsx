@@ -1,54 +1,28 @@
 import React from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-
-const dados = [
-  { dia: "Dia 1", sistolica: 142, diastolica: 90 },
-  { dia: "Dia 2", sistolica: 138, diastolica: 88 },
-  { dia: "Dia 3", sistolica: 145, diastolica: 92 },
-  { dia: "Dia 4", sistolica: 139, diastolica: 86 },
-  { dia: "Dia 5", sistolica: 137, diastolica: 85 }
-];
 
 export default function Dashboard() {
   return (
-    <div className="p-6 space-y-6">
-      <h2 className="text-2xl font-bold text-green-700">Dashboard de Medições</h2>
+    <div className="min-h-screen bg-gray-50 p-6">
+      <div className="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow">
+        <h1 className="text-2xl font-bold text-green-700 mb-4">Bem-vindo à sua área pessoal</h1>
+        <p className="text-gray-700 mb-6">
+          Aqui pode gerir as suas consultas, visualizar relatórios, e acompanhar os dados de pressão arterial.
+        </p>
 
-      <div className="bg-white shadow-md rounded-xl p-4">
-        <h3 className="text-lg font-semibold mb-2">Gráfico de Evolução</h3>
-        <ResponsiveContainer width="100%" height={300}>
-          <LineChart data={dados} margin={{ top: 10, right: 30, left: 10, bottom: 0 }}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="dia" />
-            <YAxis />
-            <Tooltip />
-            <Legend />
-            <Line type="monotone" dataKey="sistolica" stroke="#82ca9d" name="Sistólica" />
-            <Line type="monotone" dataKey="diastolica" stroke="#8884d8" name="Diastólica" />
-          </LineChart>
-        </ResponsiveContainer>
-      </div>
-
-      <div className="bg-white shadow-md rounded-xl p-4">
-        <h3 className="text-lg font-semibold mb-2">Tabela de Registos</h3>
-        <table className="w-full text-sm text-left">
-          <thead className="text-xs text-gray-700 uppercase bg-gray-100">
-            <tr>
-              <th className="px-4 py-2">Dia</th>
-              <th className="px-4 py-2">Sistólica</th>
-              <th className="px-4 py-2">Diastólica</th>
-            </tr>
-          </thead>
-          <tbody>
-            {dados.map((dado, index) => (
-              <tr key={index} className="border-t">
-                <td className="px-4 py-2">{dado.dia}</td>
-                <td className="px-4 py-2">{dado.sistolica}</td>
-                <td className="px-4 py-2">{dado.diastolica}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="p-4 bg-green-100 rounded-lg shadow">
+            <h2 className="font-semibold text-green-800">Consultas</h2>
+            <p className="text-sm text-gray-600">Visualizar e agendar.</p>
+          </div>
+          <div className="p-4 bg-green-100 rounded-lg shadow">
+            <h2 className="font-semibold text-green-800">Relatórios</h2>
+            <p className="text-sm text-gray-600">Ver resultados e enviar para o médico.</p>
+          </div>
+          <div className="p-4 bg-green-100 rounded-lg shadow">
+            <h2 className="font-semibold text-green-800">Perfil</h2>
+            <p className="text-sm text-gray-600">Editar os seus dados pessoais.</p>
+          </div>
+        </div>
       </div>
     </div>
   );
